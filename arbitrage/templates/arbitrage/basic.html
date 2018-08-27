@@ -1,0 +1,53 @@
+{% extends "arbitrage/header.html" %}
+
+{% block content %}
+    <div class="container">
+        {% for exchange in exchanges %}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>exchange = {{exchange.name}}</p>
+                    <p>price = ${{exchange.price}}</p>
+                    <p>date = {{exchange.date}}</p>
+                </div>
+            </div>   
+        {% endfor %}
+
+
+        <p>Absolute Difference = $<span id="absolute" value={{difference.absolute}}>{{difference.absolute}}</span></p>
+        <p >Percentage Difference = <span id="percentage">{{difference.percentage}}</span>%</p>
+        <p >My IP = {{geodata.ip}}</p>
+        <p >Cached = {{geodata.is_cached}}</p>
+        <form>
+            Bitcoin Address:<br>
+            <input type="text" name="firstname"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Submit">
+        </form>
+        <p >Account Balance = {{accountBalance}} BTC</p>
+        <p>Transaction = {{transactions}}</p>
+        <p>Transaction Values = {{transactionValues}} </p>
+        <p>Bitcoin Value at Time of Transactions = $ {{bitcoinValue}}</p>
+        <p>Bitcoin Value Now = $ {{bitcoinValueNow}}</p>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+         updateColourBasedOnValue("absolute");
+         updateColourBasedOnValue("percentage");
+    });
+
+    function updateColourBasedOnValue(elementId) {
+        if (parseFloat(document.getElementById(elementId).innerHTML) >= 0) {
+            document.getElementById(elementId).style.color = "green";
+        } else {
+            document.getElementById(elementId).style.color = "red";
+        } 
+    }
+</script>
+{% endblock  %}
+
