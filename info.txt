@@ -31,6 +31,7 @@ Future Work
 - General Refactoring
 - Set up a basic branching methodolgy for the team
 - Eventually containerise parts of the application ie DB, cache etc.
+- Add unit tests etc.
 
 If you guys want to learn something particular and want to add it to the project feel free. 
 If you guys download the source code and get it running locally it will probably help understanding some of the existing code navigate to the /arbitrage page.
