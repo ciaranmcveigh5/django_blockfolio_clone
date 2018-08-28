@@ -1,0 +1,41 @@
+Hey Guys,
+
+Just wanted to give you some context on the project, my initial idea for the project to create an arbitrage site for crypto exchanges. Apologies if any of this information is
+stuff you already know but would rather have too much info than too little. 
+
+Arbitrage is where you compare the prices of a currency for example Bitcoin on one exchange to another and see if it's possible to make a profit.
+For example A is selling Bitcoin at $100 and B is selling Bitcoin at $95, I can buy at B for $95 and sell at A for $100 for a $5 profit.
+
+I completed a rough implementation of this for 2 exchanges in the arbitrage folder.
+
+Alot of my friends use an app called blockfolio which tracks your crypto assets value. You have to manually input all of your assets including the price at which you bought them
+the app then uses this information with the current prices of all the different crypto assets to tell you your profits/losses.
+
+My one problem with the above is the manual inputing of your assets alot of people have invested in 10 - 20 different crypto currencies and can't remember the price they paid
+for them. Ideally you should be able to provide an app with a read only api token and an app should be able to collate all that information for you.
+
+This is the idea for this app, currently looking at 2 simple implementations,
+
+- first you provide a bitcoin address, the app can check the total amount in the account, the transactions recieved that make up that amount, the timestamp of those transactions,
+  the price of bitcoin at that timestamp to give you at price at the time you recieved it and therefore compare it to todays price. (rough implementation of this in arbitrage folder)
+- second a coinbase implementation, coinbase is a site where most people buy their initial crypto given we can get read-only api access we can look at all the users purchases
+  and price at which they were purchased and compare that total with the price today.
+
+With reagrds to the application so far almost all the work has been completed in the arbitrage folder and is in somewhat of a spaghetti state.
+
+Future Work
+
+- Get the coinbase implementation working with necessary security to protect api keys
+- Set up user accounts so we can save users data
+- Caching methods for api calls and db
+- General Refactoring
+- Set up a basic branching methodolgy for the team
+- Eventually containerise parts of the application ie DB, cache etc.
+
+If you guys want to learn something particular and want to add it to the project feel free. 
+If you guys download the source code and get it running locally it will probably help understanding some of the existing code navigate to the /arbitrage page.
+Please update the README.md with anything you think will be useful
+I've set up a trello board link is in the README.md, I'll look into how i give you guys write access for that and the right permissions for github 
+
+Any questions feel free to ask, i've put all this stuff in an info.txt in the repo again if there's stuff in here that doesn't make sense or requires more info please add a 
+few lines so the next person can understand it.     
