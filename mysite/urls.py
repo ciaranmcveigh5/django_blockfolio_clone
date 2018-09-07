@@ -21,4 +21,8 @@ urlpatterns = [
     path('', include('arbitrage.urls')),
     path(r'blog/', include('blog.urls')),
     path(r'arbitrage/', include('arbitrage.urls')),
+    path(r'signup', include('arbitrage.urls')),
+    path(r'login', include('arbitrage.urls')),
+    path(r'logout', include('arbitrage.urls')),
+    path('blockfolio', include('arbitrage.urls')),
 ]

@@ -16,23 +16,6 @@
 
         <p>Absolute Difference = $<span id="absolute" value={{difference.absolute}}>{{difference.absolute}}</span></p>
         <p >Percentage Difference = <span id="percentage">{{difference.percentage}}</span>%</p>
-
-        <h3>Blockfolio Clone</h3>
-        <h4>Bitcoin Address Lookup</h4>
-        <p>Try address 1EzwoHtiXB4iFwedPr49iywjZn2nnekhoj then look it up here https://www.blockchain.com/btc/address/1EzwoHtiXB4iFwedPr49iywjZn2nnekhoj and check the correct values correspond</p>
-        <form method="post">
-            {% csrf_token %}
-            {{form}}
-            <input type="submit" value="Submit">
-        </form>
-        <p>Account Balance = {{accountBalance}} BTC</p>
-        <p>Transaction = {{transactions}}</p>
-        <p>Transaction Values = {{transactionValues}} </p>
-        <p>Bitcoin Value at Time of Transactions = $ {{bitcoinValue}}</p>
-        <p>Bitcoin Value Now = $ {{bitcoinValueNow}}</p>
-
-        <h4>Coinbase Account Lookup</h4>
-        <p>TBD</p>
     </div>
 </body>
 

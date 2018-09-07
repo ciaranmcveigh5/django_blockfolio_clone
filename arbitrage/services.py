@@ -3,7 +3,6 @@ import json
 import datetime
 from decimal import Decimal
 from django.core.cache import cache
-from django import forms
 
 def get_info(ticker, exchange):
     url = exchange + ticker
@@ -126,8 +125,7 @@ def bitcoin_to_usd_now(satoshiValue):
     usdValue = (bitcoin_value_now() * satoshiValue)/100000000
     return usdValue
 
-class AddressForm(forms.Form):
-    address = forms.CharField()
+
 
 
 

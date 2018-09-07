@@ -1,0 +1,28 @@
+{% extends "arbitrage/header.html" %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            {% comment %} Username:<br>
+            <input type="text" name="username" value="">
+            <br>
+            Email:<br>
+            <input type="text" name="email" value="">
+            <br>
+            Password:<br>
+            <input type="password" name="password" value="">
+            <br>
+            Confirm Password:<br>
+            <input type="password" name="confirmPassword" value="">
+            <br><br> {% endcomment %}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+<script>
+
+</script>
+{% endblock  %}
