@@ -1,24 +1,23 @@
-from django.shortcuts import render
+from django.contrib.auth import login as auth_login
+from django.shortcuts import render, redirect
+from .forms import SignUpForm
 
 def signup(request):
     if request.method == 'POST':
-        form = forms.SignUpForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
+            user = form.save()
+            auth_login(request, user)
             return redirect('/')
     else:
-        form = forms.SignUpForm()
+        form = SignUpForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
 def whoAmI(request):
     print(request.user.username)
 
-def loginForm(request):
-    return render(request, 'accounts/login.html')
+# def login(request):
+#     return render(request, 'accounts/login.html')
 
-def logout(request):
-    return redirect('/')
+# def logout(request):
+#     return redirect('/')

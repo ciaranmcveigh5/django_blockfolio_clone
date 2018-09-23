@@ -1,6 +1,6 @@
 from django.urls import resolve, reverse
 from django.test import TestCase
-from .views import signup, loginForm
+from .views import signup, login
 
 # class SignUpTests(TestCase):
 #     def test_signup_status_code(self):
@@ -19,7 +19,5 @@ class LogInTests(TestCase):
         self.assertEquals(response.status_code, 200)
 
     def test_login_url_resolves_signup_view(self):
-        print('testing')
         view = resolve('/accounts/login')
-        print('hello everybody')
-        self.assertEquals(view.func, loginForm)
+        self.assertEquals(view.func, login)

@@ -1,28 +1,32 @@
 {% extends "arbitrage/header.html" %}
 
-{% block content %}
-    <div class="container">
-        <form method="post">
-            {% csrf_token %}
-            {{form}}
-            {% comment %} Username:<br>
-            <input type="text" name="username" value="">
-            <br>
-            Email:<br>
-            <input type="text" name="email" value="">
-            <br>
-            Password:<br>
-            <input type="password" name="password" value="">
-            <br>
-            Confirm Password:<br>
-            <input type="password" name="confirmPassword" value="">
-            <br><br> {% endcomment %}
-            <input type="submit" value="Submit">
-        </form>
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h1 class="text-center logo my-4">
+      <a href="{% url 'contact' %}">Ar<i class="fab fa-bitcoin"></i>itrage</a>
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Sign up</h3>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% include 'includes/form.html' %}
+              <button type="submit" class="btn btn-primary btn-block">Create an account</button>
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            Already have an account? <a href="{% url 'login' %}">Log in</a>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-
-<script>
-
-</script>
-{% endblock  %}
+  </div>
+{% endblock %}
